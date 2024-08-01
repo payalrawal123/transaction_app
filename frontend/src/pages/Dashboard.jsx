@@ -3,9 +3,10 @@ import { getLedgers, getTransactions } from '../services/api';
 import AddLedger from './AddLedger';
 import AddTransaction from './AddTransaction';
 import LedgerList from './LedgerList';
-import TransactionList from './TransactionList';
+// import TransactionList from './TransactionList';
 import Modal from './Modal';
 import '../styles/Dashboard.css';
+import LedgerTransactions from './TransactionList';
 
 const Dashboard = ({ token }) => {
   const [ledgers, setLedgers] = useState([]);
@@ -83,17 +84,7 @@ const Dashboard = ({ token }) => {
         onSelectLedger={handleSelectLedger}
         onAddTransactionClick={handleAddTransactionClick}
       />
-      {selectedLedger && (
-        <>
-          <h3>Transactions for {selectedLedger.name}</h3>
-          <div className="date-inputs">
-            <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} required />
-            <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} required />
-            <button onClick={handleFetchTransactions}>Filter Transactions</button>
-          </div>
-          <TransactionList transactions={transactions} />
-        </>
-      )}
+   
       <Modal isOpen={isTransactionModalOpen} onClose={() => setIsTransactionModalOpen(false)}>
         <AddTransaction token={token} ledgerId={selectedLedger?._id} onAddTransaction={handleAddTransaction} />
       </Modal>

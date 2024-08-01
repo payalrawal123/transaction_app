@@ -38,14 +38,14 @@ const addTransaction = async (transactionData, token) => {
   });
   return response.data;
 };
-// const getTransactions  = async (token) => {
-//   const response = await axios.get(`${API_URL}/transaction`, {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-//   return response.data;
-// };
+const getAllTransactions  = async (token) => {
+  const response = await axios.get(`${API_URL}/transaction`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
+};
 
 const getTransactions = async (ledgerId, startDate, endDate, token) => {
   const response = await axios.get(`${API_URL}/transaction/${ledgerId}`, {
@@ -74,4 +74,4 @@ const generatePDF = async (ledgerId, startDate, endDate, token) => {
   return response.data;
 };
 
-export { register, login, getLedgers, createLedger, addTransaction, getTransactions, generatePDF };
+export { register, login, getLedgers, createLedger, addTransaction, getTransactions, generatePDF ,getAllTransactions};

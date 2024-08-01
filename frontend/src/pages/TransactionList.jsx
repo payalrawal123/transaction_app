@@ -9,15 +9,26 @@ const TransactionList = ({ transactions }) => {
   return (
     <div className="transaction-list">
       <h3>Transactions</h3>
-      <ul className="list">
-        {transactions.map((transaction) => (
-          <li key={transaction._id}>
-            <span>{transaction.date}</span>
-            <span>{transaction.amount}</span>
-            <span>{transaction.type}</span>
-          </li>
-        ))}
-      </ul>
+      <table className="transactions-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {transactions.map((transaction) => (
+                <tr key={transaction._id}>
+                  <td>{new Date(transaction.date).toLocaleDateString()}</td>
+                  <td>{transaction.name}</td>
+                  <td>${transaction.amount}</td>
+                  <td>{transaction.type}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
     </div>
   );
 };

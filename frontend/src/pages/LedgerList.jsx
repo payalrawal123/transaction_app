@@ -1,7 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Ledger.css';
 
-const LedgerList = ({ ledgers, onSelectLedger, onAddTransactionClick }) => {
+const LedgerList = ({ ledgers, onAddTransactionClick }) => {
+  const navigate = useNavigate();
+
+  const handleSelectLedger = (ledger) => {
+    navigate(`/transaction/${ledger._id}`);
+  };
+
   return (
     <div className="ledger-list">
       <h3>Ledgers</h3>
@@ -10,8 +17,8 @@ const LedgerList = ({ ledgers, onSelectLedger, onAddTransactionClick }) => {
           <li key={ledger._id}>
             {ledger.name}
             <div>
+              <button onClick={() => handleSelectLedger(ledger)}>View Transactions</button>
               <button onClick={() => onAddTransactionClick(ledger)}>Add Transaction</button>
-              <button onClick={() => onSelectLedger(ledger)}>View Transactions</button>
             </div>
           </li>
         ))}
