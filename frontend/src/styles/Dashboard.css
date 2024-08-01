@@ -1,0 +1,44 @@
+.dashboard {
+    margin: 20px;
+  }
+  
+  .dashboard h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .dashboard h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .date-inputs input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .date-inputs button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .date-inputs button:hover {
+    background-color: #0056b3;
+  }
+  

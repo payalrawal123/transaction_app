@@ -1,0 +1,42 @@
+.transaction-list {
+    margin-top: 20px;
+  }
+  
+  .transaction-list h3 {
+    margin-bottom: 10px;
+    color: #333; /* Ensuring the header text color is visible */
+  }
+  
+  .transaction-list .list {
+    list-style-type: none;
+    padding: 0;
+    color: #333;
+  }
+  
+  .transaction-list .list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e8d4d4; /* Light background color */
+    color: #333; /* Ensuring text color is visible */
+  }
+  
+  .transaction-list .list li span {
+    flex: 1;
+    text-align: center;
+    color: #333; /* Ensuring span text color is visible */
+  }
+  
+  /* Additional styles for better visibility */
+  .transaction-list .list li span:first-child {
+    text-align: left;
+  }
+  
+  .transaction-list .list li span:last-child {
+    text-align: right;
+  }
+  

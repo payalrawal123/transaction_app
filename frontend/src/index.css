@@ -1,0 +1,116 @@
+body {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input,
+select
+{
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  
+  /* max-width: 100px; */
+}
+
+.a_btn{
+  text-align: center;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: white;
+  margin-top: 10px ;
+  background-color: rgb(16, 13, 5);
+
+}
+button {
+  cursor: pointer;
+}
+
+.dashboard {
+  margin-top: 20px;
+}
+
+/* .list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  padding: 10px;
+  background-color: #f4f4f4;
+  color: black;
+  margin-bottom: 5px;
+  cursor: pointer;
+} */
+
+/* Navbar.css */
+.nav {
+  height: 30px;
+  display: flex;
+  
+  justify-content: flex-end; /* Centers the nav items horizontally */
+  background-color: #e0ba81; /* Light background color for the nav */
+  padding: 20px 20px; /* Padding around the nav items */
+  border-bottom: 1px solid #ddd; /* Border below the nav for separation */
+}
+
+.navlink {
+  text-decoration: none; /* Remove underline from links */
+  color: black; /* Default color for links */
+  font-size: 20px; /* Font size for links */
+  margin: 0 15px; /* Margin between nav items */
+  transition: color 0.3s; /* Smooth color transition for hover */
+}
+
+.navlink:hover {
+  color: #007bff; /* Color change on hover */
+}
+
+.navlink.active {
+  color: red; /* Color for active nav link */
+  font-weight: bold; /* Bold text for active link */
+}
+
+.login{
+  margin-top: 100px;
+  margin-left: 500px;
+  /* text-align: center; */
+}
+
+.l-h2{
+  /* text-align: center; */
+  font-size: 30px;
+}
+.l_btn{
+  text-align: center;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(179, 145, 52);
+}
+
+.add_ledger{
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(179, 145, 52);
+}

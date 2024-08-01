@@ -1,6 +1,6 @@
 
 const express = require("express");
-const { ledgerModel } = require("../models/transactionModel");
+const { ledgerModel } = require("../models/ledgerModel");
 
 const ledgerRouter = express.Router();
 

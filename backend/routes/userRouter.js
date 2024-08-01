@@ -7,11 +7,11 @@ const { userModel } = require("../models/userModel");
 const userRouter = express.Router();
 
 userRouter.post("/register", async (req, res) => {
-  const { name, email, password , role} = req.body;
+  const { name, email, password } = req.body;
   const saltRound = 10;
   try {
     const hashedPassword = await bcrypt.hash(password, saltRound);
-    const isUser = new userModel({ name, email, password: hashedPassword , role});
+    const isUser = new userModel({ name, email, password: hashedPassword });
     await isUser.save();
     return res.status(200).send({ error: false, item: isUser });
   } catch (error) {
