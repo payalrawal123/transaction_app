@@ -19,7 +19,7 @@ const Login = () => {
       });
 
       localStorage.setItem('token', response.data.token);
-      navigate('/dashboard'); // Redirect to home or other page
+      navigate('/'); // Redirect to home or other page
     } catch (error) {
       console.error('Error during login:', error.response?.data || error.message);
       alert('Login failed. Please check your credentials.');

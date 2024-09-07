@@ -9,24 +9,21 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) =>{
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/user/register', {
-        name,
-        email,
-        password,
-      });
-
-      console.log('Signup successful:', response.data);
-      alert('User registered successfully!');
-      navigate('/login'); // Redirect to home or other page
+      let responce = await axios.post("http://localhost:8080/user/register",{
+        name,email,password
+      })
+      console.log(responce.data);
+      alert("signup succesfully")
+      navigate('/login')
     } catch (error) {
-      console.error('Error during login:', error.response?.data || error.message);
-      alert('Login failed. Please check your credentials.');
+      console.error('Error during signup:', error.response?.data || error.message);
+      //       alert(`Signup failed: ${error.response?.data?.message || 'Please try again.'}`);
     }
-  };
+  }
 
   return (
     <div className="login">

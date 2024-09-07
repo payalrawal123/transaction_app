@@ -7,6 +7,7 @@ import LedgerList from './LedgerList';
 import Modal from './Modal';
 import '../styles/Dashboard.css';
 import LedgerTransactions from './TransactionList';
+import axios from 'axios';
 
 const Dashboard = ({ token }) => {
   const [ledgers, setLedgers] = useState([]);
@@ -20,30 +21,30 @@ const Dashboard = ({ token }) => {
   useEffect(() => {
     const fetchLedgers = async () => {
       try {
-        const data = await getLedgers(token);
-        setLedgers(data);
+        const response = await axios.get("http://localhost:8080/ledger");
+        setLedgers(response.data);
       } catch (error) {
         console.error('Fetching ledgers failed:', error);
       }
     };
 
     fetchLedgers();
-  }, [token]);
+  }, []);
 
   const handleAddLedger = (ledger) => {
     setLedgers([...ledgers, ledger]);
     setIsLedgerModalOpen(false);
   };
 
-  const handleSelectLedger = async (ledger) => {
-    setSelectedLedger(ledger);
-    try {
-      const data = await getTransactions(ledger._id, null, null, token); // Fetch all transactions
-      setTransactions(data);
-    } catch (error) {
-      console.error('Fetching transactions failed:', error);
-    }
-  };
+  // const handleSelectLedger = async (ledger) => {
+  //   setSelectedLedger(ledger);
+  //   try {
+  //     const data = await getTransactions(ledger._id, null, null, token); // Fetch all transactions
+  //     setTransactions(data);
+  //   } catch (error) {
+  //     console.error('Fetching transactions failed:', error);
+  //   }
+  // };
 
   const handleAddTransactionClick = (ledger) => {
     setSelectedLedger(ledger);
@@ -81,7 +82,6 @@ const Dashboard = ({ token }) => {
       </Modal>
       <LedgerList
         ledgers={ledgers}
-        onSelectLedger={handleSelectLedger}
         onAddTransactionClick={handleAddTransactionClick}
       />
    
